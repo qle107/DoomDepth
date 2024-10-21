@@ -1,0 +1,42 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/stuff/weapon.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\stuff\weapon.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\stuff\weapon.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "weapon.h"
+        -:    2:#include <string.h> 
+        -:    3:
+        -:    4:    /* Create a new weapon
+        -:    5:    *	@param name set weapon's base Name
+        -:    6:    *	@param damage set weapon's base Damage
+        -:    7:    *	@param durability set weapon's base Durability
+        -:    8:    *	@param strength set weapon's base Strength
+        -:    9:    *	@param intelligence set weapon's base Intelligence
+        -:   10:    *	@param agility set weapon's base Agility
+        -:   11:    *	@param defend set weapon's base Defend
+        -:   12:    *	@param luck set weapon's base Luck
+        -:   13:    */
+function createWeapon called 0 returned 0% blocks executed 0%
+    #####:   14:Weapon createWeapon(const char *name, int damage,  int strength, int intelligence, int defend, int agility, int luck) {
+        -:   15:    Weapon weapon;
+    #####:   16:    strncpy(weapon.name, name, sizeof(weapon.name) - 1);
+    #####:   17:    weapon.name[sizeof(weapon.name) - 1] = '\0'; // Null-terminate the string
+    #####:   18:    weapon.damage = damage;
+    #####:   19:    weapon.durability = 100;
+    #####:   20:    weapon.strength = strength;
+    #####:   21:    weapon.intelligence = intelligence;
+    #####:   22:    weapon.defend = defend;
+    #####:   23:    weapon.agility = agility;
+    #####:   24:    weapon.luck = luck;
+        -:   25:
+    #####:   26:    return weapon;
+    %%%%%:   26-block  0
+        -:   27:}
+        -:   28:
+        -:   29:    /* Update the durability of a weapon
+        -:   30:    *	@param weapon call weapon
+        -:   31:    *	@param newDurability set weapon's durability
+        -:   32:    */
+function updateWeaponDurability called 0 returned 0% blocks executed 0%
+    #####:   33:void updateWeaponDurability(Weapon *weapon, int newDurability) {
+    #####:   34:    weapon->durability = newDurability;
+    #####:   35:}

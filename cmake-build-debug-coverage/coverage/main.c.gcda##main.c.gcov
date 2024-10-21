@@ -1,0 +1,28 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/main.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\main.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <map.h>
+        -:    2:#include <monster.h>
+        -:    3:#include <player.h>
+        -:    4:#include <save.h>
+        -:    5:#include <spell.h>
+        -:    6:#include <stuff.h>
+        -:    7:#include <fight.h>
+        -:    8:#include <time.h>
+        -:    9:#include <stdio.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include "player.h"
+        -:   12:#include "weapon.h"
+        -:   13:#include "util.h"
+function main called 1 returned 100% blocks executed 100%
+        1:   14:int main() {
+        1:   15:    Character myChar = selectCharacter();
+        1:   15-block  0
+call    0 returned 1
+        1:   16:    displayCharacterStats(myChar);
+call    0 returned 1
+        1:   17:    displayCharacterHpMana(myChar);
+call    0 returned 1
+        1:   18:    return 0;
+        -:   19:}

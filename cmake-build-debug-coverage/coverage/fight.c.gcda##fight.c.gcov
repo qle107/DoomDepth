@@ -1,0 +1,181 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/fight/fight.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\fight\fight.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\fight\fight.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "fight.h"
+        -:    2:
+function humanAttack called 0 returned 0% blocks executed 0%
+    #####:    3:void humanAttack(Character *attacker,Monster *target){
+    #####:    4:    while(attacker->turn > 0) {
+    %%%%%:    4-block  0
+    %%%%%:    4-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:    5:
+    #####:    6:    target->life -= calculateBasedPlayerDamage(attacker);
+    %%%%%:    6-block  0
+call    0 never executed
+    #####:    7:    printf("The monster's health is now %d\n", target->life);
+call    0 never executed
+    #####:    8:    if (target->life <= 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:    9:        printf("The monster has been defeated!\n");
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:        break;
+        -:   11:    }
+    #####:   12:        attacker->turn -= 1;
+    %%%%%:   12-block  0
+        -:   13:    }
+    #####:   14:}
+        -:   15:
+        -:   16:
+function monsterAttack called 0 returned 0% blocks executed 0%
+    #####:   17:void monsterAttack(Monster *attacker,Character *target) {
+    #####:   18:    while (attacker->turn > 0) {
+    %%%%%:   18-block  0
+    %%%%%:   18-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   19:        target->currentHealth -= generateRandomNumber(attacker->min_attack, attacker->max_attack);
+    %%%%%:   19-block  0
+call    0 never executed
+    #####:   20:        printf("Player's health is now %d\n", target->currentHealth);
+call    0 never executed
+    #####:   21:        if (target->currentHealth <= 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   22:            printf("Player is defeated!\n");
+    %%%%%:   22-block  0
+call    0 never executed
+    #####:   23:            break;
+        -:   24:        }
+    #####:   25:        attacker->turn -= 1;
+    %%%%%:   25-block  0
+        -:   26:    }
+    #####:   27:}
+        -:   28:/*
+        -:   29: * Function to perform a fight between a Character and Monsters\
+        -:   30: * Stop conditions: All the monsters is dead or the player is dead -> Game Over
+        -:   31: * Stop conditions: All the monsters is dead or the player is alive -> call another function to generate more monsters.
+        -:   32: * @param player The player (Character)
+        -:   33: * @param monsters The monsters (Monster)
+        -:   34: */
+        -:   35://Monsters = [Monster1, Monster2, Monster3]
+function fight called 0 returned 0% blocks executed 0%
+    #####:   36:void fight(Character *player, Monster **monsters, int monster_count){
+    #####:   37:    bool allMonstersIsKilled = false; // turn to true when all monsters are killed
+        -:   38:
+        -:   39://    if( allMonstersIsKilled == true || player->health <= 0){
+        -:   40://        // call another function to generate more monsters
+        -:   41://    }
+        -:   42://    else{
+        -:   43://        // call another function to generate more monsters
+        -:   44://    }
+    #####:   45:    while(allMonstersIsKilled == false && player->currentHealth > 0){
+    %%%%%:   45-block  0
+    %%%%%:   45-block  1
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   45-block  2
+branch  2 never executed
+branch  3 never executed (fallthrough)
+        -:   46:        //Choose which monster to attack
+    #####:   47:        while(player->turn > 0){
+    %%%%%:   47-block  0
+    %%%%%:   47-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   48:            for(int i = 0; i < monster_count; i++){
+    %%%%%:   48-block  0
+    %%%%%:   48-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   49:                printf("Monster %d: - Life: %d - Defend: %d  ", i + 1, monsters[i]->life, monsters[i]->defense);
+    %%%%%:   49-block  0
+call    0 never executed
+        -:   50:            }
+    #####:   51:            printf("Which monster do you want to attack? ");
+    %%%%%:   51-block  0
+call    0 never executed
+        -:   52:            int monster_index;
+    #####:   53:            scanf("%d", &monster_index);
+call    0 never executed
+    #####:   54:            while(monster_index < 1 || monster_index > monster_count){
+    %%%%%:   54-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    %%%%%:   54-block  1
+branch  2 never executed
+branch  3 never executed (fallthrough)
+    #####:   55:                printf("Please choose a monster between 1 and %d: ", monster_count);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:                scanf("%d", &monster_index);
+call    0 never executed
+        -:   57:            }
+        -:   58:
+        -:   59:            // player attack
+    #####:   60:            humanAttack(player, monsters[monster_index - 1]);
+    %%%%%:   60-block  0
+call    0 never executed
+        -:   61:
+        -:   62:            // check if all monsters are killed
+    #####:   63:            int monsterKilled = 0;
+    #####:   64:            for(int i =0; i< monster_count; i++){
+    %%%%%:   64-block  0
+    %%%%%:   64-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   65:                if(monsters[i]->life > 0){
+    %%%%%:   65-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   66:                    monsterKilled = 1;
+    %%%%%:   66-block  0
+        -:   67:                }
+        -:   68:            }
+    #####:   69:            if(monsterKilled == 0){
+    %%%%%:   69-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   70:                allMonstersIsKilled = true;
+    #####:   71:                break;
+    %%%%%:   71-block  0
+        -:   72:            }
+        -:   73:        }
+        -:   74:        // Monster attack player
+    #####:   75:        while(allMonstersIsKilled == false && player->currentHealth > 0){
+    %%%%%:   75-block  0
+    %%%%%:   75-block  1
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   75-block  2
+branch  2 never executed
+branch  3 never executed (fallthrough)
+    #####:   76:            for(int i = 0; i < monster_count; i++){
+    %%%%%:   76-block  0
+    %%%%%:   76-block  1
+    %%%%%:   76-block  2
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   77:                if(monsters[i]->life > 0){
+    %%%%%:   77-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   78:                    while(monsters[i]->turn > 0){
+    %%%%%:   78-block  0
+    %%%%%:   78-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   79:                    monsterAttack(monsters[i], player);
+    %%%%%:   79-block  0
+call    0 never executed
+        -:   80:                    }
+        -:   81:                }
+        -:   82:            }
+        -:   83:        }
+        -:   84:
+        -:   85:    }
+    #####:   86:}

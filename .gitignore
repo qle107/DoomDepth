@@ -1,0 +1,23 @@
+# Ignore build artifacts and executables
+/build/
+/bin/
+/*.exe
+/*.out
+/*.o
+/*.so
+
+# Ignore CMake build directory
+/cmake-build-debug/
+
+
+# Ignore system-specific or editor-specific files
+/.vscode/
+/.idea/
+/*.suo
+/*.user
+/*.sln
+/*.sdf
+/.DS_Store
+
+# Ignore temporary or backup files
+*~

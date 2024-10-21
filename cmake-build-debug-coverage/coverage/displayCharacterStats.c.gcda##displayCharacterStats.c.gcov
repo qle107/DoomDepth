@@ -1,0 +1,39 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/util/displayCharacterStats.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\displayCharacterStats.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\displayCharacterStats.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by lequa on 11/4/2023.
+        -:    3://
+        -:    4:#include <conio.h>
+        -:    5:#include "displayCharacterStats.h"
+function displayCharacterStats called 1 returned 100% blocks executed 83%
+        1:    6:void displayCharacterStats(Character c) {
+        1:    7:    printf("Health: %d\n", c.maxHealth);
+        1:    7-block  0
+call    0 returned 1
+        1:    8:    printf("Strength: %d\n", c.strength);
+call    0 returned 1
+        1:    9:    printf("Intelligence: %d\n", c.intelligence);
+call    0 returned 1
+        1:   10:    printf("Defend: %d\n", c.defend);
+call    0 returned 1
+        1:   11:    printf("Agility: %d\n", c.agility);
+call    0 returned 1
+        1:   12:    printf("Luck: %d\n", c.luck);
+call    0 returned 1
+        1:   13:    printf("Level: %d\n", c.level);
+call    0 returned 1
+        1:   14:    if (c.weapon != NULL) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:   15:        printf("Weapon Strength: %d\n", c.weapon->strength);
+    %%%%%:   15-block  0
+call    0 never executed
+    #####:   16:        printf("Weapon Intelligence: %d\n", c.weapon->intelligence);
+call    0 never executed
+        -:   17:    }
+        1:   18:    printf("\n");
+        1:   18-block  0
+call    0 returned 1
+        1:   19:}

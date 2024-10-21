@@ -1,0 +1,200 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/player/player.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\player\player.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\player\player.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "player.h"
+        -:    2:#include <stdio.h>
+        -:    3:#include <stdlib.h>
+        -:    4:    /* Create a new character with initial attributes
+        -:    5:    *	@param initialHealth set character's base Health
+        -:    6:    *	@param initialStrength set character's base Strength
+        -:    7:    *	@param initialIntelligence set character's base Intelligence
+        -:    8:    *	@param initialAgility set character's base Agility
+        -:    9:    *	@param initialLuck set character's base Luck
+        -:   10:    *	@param initialDefend set character's base Defend
+        -:   11:    */
+function createCharacter called 1 returned 100% blocks executed 100%
+        1:   12:Character createCharacter(int initialHealth, int initialDefend, int initialStrength, int initialIntelligence, int initialAgility, int initialLuck){
+        -:   13:    Character character;
+        1:   14:    character.maxHealth = initialHealth;
+        1:   15:    character.currentHealth = initialHealth;
+        1:   16:    character.defend = initialDefend;
+        1:   17:    character.turn = 0; // Initialize turn to 0 or any desired value
+        1:   18:    character.level = 1; // Base level is 1
+        1:   19:    character.maxExp = 100; // Level 1 need 100 exp to level up
+        1:   20:    character.currentExp=0; // Current exp is 0
+        1:   21:    character.strength = initialStrength;
+        1:   22:    character.intelligence = initialIntelligence;
+        1:   23:    character.agility = initialAgility;
+        1:   24:    character.luck = initialLuck < 5 ? initialLuck : 5; // Luck is capped at 5
+        1:   25:    character.weapon = NULL;
+        1:   26:    return character;
+        1:   26-block  0
+        -:   27:}
+        -:   28:
+function selectCharacter called 1 returned 100% blocks executed 79%
+        1:   29:Character selectCharacter(){
+        1:   30:    int characterType = 0;
+        2:   31:    while (characterType < 1 || characterType > 3){
+        1:   31-block  0
+        2:   31-block  1
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:   31-block  2
+branch  2 taken 0
+branch  3 taken 1 (fallthrough)
+        1:   32:        printf("Select your character type:\n");
+        1:   32-block  0
+call    0 returned 1
+        1:   33:        printf("1. Hunter\n");
+call    0 returned 1
+        1:   34:        printf("2. Mage\n");
+call    0 returned 1
+        1:   35:        printf("3. Warrior\n");
+call    0 returned 1
+        1:   36:        printf("Your choice: ");
+call    0 returned 1
+        1:   37:        scanf("%d", &characterType);
+call    0 returned 1
+        -:   38:
+        -:   39:    }
+        1:   40:    printf("\n");
+        1:   40-block  0
+call    0 returned 1
+        -:   41:    Character character;
+        1:   42:    switch (characterType){
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 1
+    #####:   43:        case 1:
+        -:   44:            // Hunter
+    #####:   45:            character = createCharacter(100, 20, 15, 10, 25, 3);
+    %%%%%:   45-block  0
+call    0 never executed
+    #####:   46:            break;
+    #####:   47:        case 2:
+        -:   48:            // Mage
+    #####:   49:            character = createCharacter(80, 15, 5, 25, 15, 4);
+    %%%%%:   49-block  0
+call    0 never executed
+    #####:   50:            break;
+        1:   51:        default:
+        -:   52:            // Warrior
+        1:   53:            character = createCharacter(120, 30, 30, 10, 15, 2);
+        1:   53-block  0
+call    0 returned 1
+        1:   54:            break;
+        -:   55:    }
+        1:   56:    return character;
+        1:   56-block  0
+        -:   57:
+        -:   58:}
+        -:   59:    /** Update a character's attributes (e.g., after leveling up)
+        -:   60:    *	@param *character Chacracter's pointer.
+        -:   61:    *	@param newHealth after levelup, newhealth > currentHealth.
+        -:   62:    *	@param newDefend after levelup, newDefend > currentDefend.
+        -:   63:    *	@param newStrength after levelup, newStrength > currentStrength.
+        -:   64:    *	@param newIntelligence after levelup, newIntelligence > currentIntelligence.
+        -:   65:    *	@param newLuck after levelup, newLuck > currentLuck. (optional).
+        -:   66:    *	@param nextLevel after levelup, nextLevel > currentLevel.
+        -:   67:    *	@param nextMaxExp after levelup, nextMaxExp > currentMaxExp.
+        -:   68:    */
+function levelUp called 0 returned 0% blocks executed 0%
+    #####:   69:void levelUp(Character *character, int newHealth, int newDefend, int newStrength, int newIntelligence, int newAgility, int newLuck,int nextLevel,int nextMaxExp){
+    #####:   70:    character->maxHealth = newHealth;
+    #####:   71:    character->currentHealth = newHealth;
+    #####:   72:    character->defend = newDefend;
+    #####:   73:    character->strength = newStrength;
+    #####:   74:    character->intelligence = newIntelligence;
+    #####:   75:    character->level = nextLevel;
+    #####:   76:    character->maxExp = nextMaxExp;
+    #####:   77:    character->currentExp=0;
+    #####:   78:    character->agility = newAgility;
+    #####:   79:    character->luck = newLuck;
+    #####:   80:}
+        -:   81:    /** Calculate damage that character deal
+        -:   82:    *   @param *character Call character.
+        -:   83:    */
+function calculateBasedPlayerDamage called 0 returned 0% blocks executed 0%
+    #####:   84:int calculateBasedPlayerDamage (Character *character){
+    #####:   85:    int total = 0;
+    #####:   86:    if(character->weapon == NULL){ //Don't have any weapon
+    %%%%%:   86-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   87:        total += (int)(character->strength*1.25); // strength + 25%
+    #####:   88:        total += (int)(character->intelligence*0.8); // intell - 20%
+    %%%%%:   88-block  0
+        -:   89:    } else { //Have weapon
+    #####:   90:        total += (int)(character->strength*1.25); // base strength + 25%
+    #####:   91:        total += (int)(character->intelligence*0.8); // base intell - 20%
+    #####:   92:        total += (int)(character->weapon->strength*1.5); // weapon strength + 50%
+    #####:   93:        total += (int)(character->weapon->intelligence); // weapon intell
+    %%%%%:   93-block  0
+        -:   94:    }
+    #####:   95:    if ((character->luck * 10 + 20) >= (rand() % 100)){ //Max luck is like 70% to deal crit
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   96:        total *= 1.5;
+    %%%%%:   96-block  0
+        -:   97:    }
+    #####:   98:    return total;
+    %%%%%:   98-block  0
+        -:   99:}
+        -:  100:
+        -:  101:    /** End player's turn
+        -:  102:    *   @param *character Call character.
+        -:  103:    */
+function endTurn called 0 returned 0% blocks executed 0%
+    #####:  104:void endTurn (Character *character){
+    #####:  105:    character->turn = 0;
+    #####:  106:    return;
+    %%%%%:  106-block  0
+        -:  107:}
+        -:  108:
+        -:  109:    /** Reset player's turn
+        -:  110:    *   @param *character Call character.
+        -:  111:    */
+function resetTurn called 0 returned 0% blocks executed 0%
+    #####:  112:void resetTurn (Character *character){
+    #####:  113:    character->turn = 3;
+    #####:  114:    return;
+    %%%%%:  114-block  0
+        -:  115:}
+        -:  116:    /**
+        -:  117:     * Equip a weapon to a character
+        -:  118:     * @param character the character to equip the weapon
+        -:  119:     * @param weaponStats the weapon to equip
+        -:  120:     */
+function equipWeapon called 0 returned 0% blocks executed 0%
+    #####:  121:void equipWeapon(Character *character, Weapon weaponStats) {
+        -:  122:    // only one weapon at a time for now
+    #####:  123:    if(character->weapon != NULL) {
+    %%%%%:  123-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  124:        free(character->weapon);
+    %%%%%:  124-block  0
+        -:  125:    }
+        -:  126:
+        -:  127:    // make a reservation on memory
+    #####:  128:    character->weapon = (Weapon *)malloc(sizeof(Weapon));
+        -:  129:
+        -:  130:    // Check if memory allocation was successful
+    #####:  131:    if(character->weapon == NULL) {
+    %%%%%:  131-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  132:        // check if malloc is a good boy
+    #####:  133:        printf("Failed to allocate memory for weapon!\n");
+    %%%%%:  133-block  0
+call    0 never executed
+    #####:  134:        exit(1);
+call    0 never executed
+        -:  135:    }
+        -:  136:
+        -:  137:    // transfer information and update the current weapon
+    #####:  138:    *(character->weapon) = weaponStats;
+    #####:  139:}

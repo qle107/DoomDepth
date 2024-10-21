@@ -1,0 +1,38 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/util/random.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\random.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\random.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "random.h"
+        -:    2:#include <stdlib.h> 
+        -:    3:#include <time.h>   
+        -:    4:
+        -:    5:/**
+        -:    6:* Generate a random integer between min and max
+        -:    7:* @param min the first value no matter min or max.
+        -:    8:* @param max the second value no matter min or max.
+        -:    9:*/
+function generateRandomNumber called 0 returned 0% blocks executed 0%
+    #####:   10:int generateRandomNumber(int min, int max) {
+        -:   11:    //!Swap if min < max
+    #####:   12:    if (max < min) {     
+    %%%%%:   12-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   13:        int temp = min;
+    #####:   14:        min = max;
+    #####:   15:        max = temp;
+    %%%%%:   15-block  0
+        -:   16:    }
+        -:   17:
+    #####:   18:    srand((unsigned int)time(NULL));
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+        -:   19:
+    #####:   20:    int range = max - min + 1;
+        -:   21:
+    #####:   22:    int randomNum = (rand() % range) + min;
+call    0 never executed
+        -:   23:
+    #####:   24:    return randomNum;
+        -:   25:}

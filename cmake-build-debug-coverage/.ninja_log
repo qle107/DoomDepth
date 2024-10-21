@@ -1,0 +1,17 @@
+# ninja log v5
+25	399	7208369498013355	CMakeFiles/Code.dir/src/map/map.c.obj	939898182b0723b1
+89	411	7208369498173385	CMakeFiles/Code.dir/src/save/save.c.obj	7918c8a41f10315b
+8	264	7210886711808372	CMakeFiles/Code.dir/main.c.obj	ecd5dd60c2a52404
+54	410	7208369498143379	CMakeFiles/Code.dir/src/spell/spell.c.obj	bec8cb2f68d68ec2
+29	249	7210886711648322	CMakeFiles/Code.dir/src/monster/monster.c.obj	3c17b67495e4b263
+11	173	7210822097103970	CMakeFiles/Code.dir/src/player/player.c.obj	46fa2ffc81c073d6
+166	440	7208369498523470	CMakeFiles/Code.dir/src/stuff/armor.c.obj	c0863af4e55b8916
+19	267	7210886711818351	CMakeFiles/Code.dir/src/fight/fight.c.obj	5c514354da0df104
+70	449	7208369498643493	CMakeFiles/Code.dir/src/stuff/weapon.c.obj	6978bf03746ddc0b
+105	455	7208369498683510	CMakeFiles/Code.dir/src/util/random.c.obj	d56834fc1638a796
+127	462	7208369498773524	CMakeFiles/Code.dir/src/util/displayCharacterStats.c.obj	917aa89f4a52c3cc
+58	295	7210886712144937	CMakeFiles/Code.dir/src/util/display.c.obj	590a78e67cba7a63
+6	154	7210887493094711	CMakeFiles/Code.dir/src/util/readFile.c.obj	a4d5c46d87cf48da
+156	385	7210887495373223	Code.exe	76df0ce8b2028b4a
+1	146	7211852206145666	build.ninja	a591500cd5da4a87
+38	252	7210886711628315	CMakeFiles/Code.dir/src/util/intro.c.obj	4c7aa2cb7821166c

@@ -1,0 +1,42 @@
+        -:    0:Source:D:/esgi/3rd year/C/doomdepths/src/util/readFile.c
+        -:    0:Graph:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\readFile.c.gcno
+        -:    0:Data:D:\esgi\3rd year\C\doomdepths\cmake-build-debug-coverage\CMakeFiles\Code.dir\src\util\readFile.c.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by lequa on 11/4/2023.
+        -:    3://
+        -:    4:#include "readFile.h"
+        -:    5:
+function readFile called 0 returned 0% blocks executed 0%
+    #####:    6:char* readFile(char* fileName) {
+    #####:    7:    FILE* file = fopen(fileName, "r");
+    %%%%%:    7-block  0
+call    0 never executed
+    #####:    8:    if (file == NULL) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:    9:        printf("Error opening file %s\n", fileName);
+    %%%%%:    9-block  0
+call    0 never executed
+    #####:   10:        exit(1);
+call    0 never executed
+        -:   11:    }
+        -:   12:
+    #####:   13:    fseek(file, 0, SEEK_END);
+    %%%%%:   13-block  0
+call    0 never executed
+    #####:   14:    long fsize = ftell(file);
+call    0 never executed
+    #####:   15:    rewind(file);
+call    0 never executed
+        -:   16:
+    #####:   17:    fseek(file, 0, SEEK_SET);
+call    0 never executed
+    #####:   18:    char* fcontent = malloc(fsize + 1);
+    #####:   19:    fread(fcontent, fsize, 1, file);
+call    0 never executed
+    #####:   20:    fclose(file);
+call    0 never executed
+    #####:   21:    fcontent[fsize] = '\0';
+    #####:   22:    return fcontent;
+        -:   23:}
